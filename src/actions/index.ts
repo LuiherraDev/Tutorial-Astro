@@ -5,7 +5,7 @@ export const server = {
   newClient: defineAction({
     accept: 'form',
     input: z.object({
-      nombre: z.string().min(1),
+      nombre: z.string().min(3),
       email: z.email(),
       descripcion: z.string(),
     }),
@@ -17,7 +17,7 @@ export const server = {
 
       return {
         success: true,
-      }
+      };
     },
   })
 }

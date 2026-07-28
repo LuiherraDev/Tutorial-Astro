@@ -5,7 +5,15 @@ import { actions } from "astro:actions";
 
 const pageTitle = "Formulario de pruebas";
 
-console.log(actions);
+const result = Astro.getActionResult(actions.newClient);
+
+if (result && !result.error) {
+  return Astro.redirect("/");
+}
+
+if (result?.error) {
+  console.log(result.error);
+}
 ---
 
 <html lang="es">
